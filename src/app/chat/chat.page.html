@@ -10,8 +10,8 @@
     <div id="chatMessage">
       <div *ngFor="let message of messages" [class]="message.specialMessage ? 'message special' : 'message'">
         <div [class]="message.username != username ? 'innerMessage messageRight' : 'innerMessage messageLeft'">
-          <div class="username">{{ message.username }}</div>
-          <div class="messageContent">{{ message.message }}</div>
+          <div class="username"> {{ message.username }} </div>
+          <div class="messageContent"> {{ message.message }} </div>
         </div>
       </div>
     </div>
