@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>chat</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+
+    <div id="chatMessage">
+      <div *ngFor="let message of messages" [class]="message.specialMessage ? 'message special' : 'message'">
+        <div [class]="message.username != username ? 'innerMessage messageRight' : 'innerMessage messageLeft'">
+          <div class="username">{{ message.username }}</div>
+          <div class="messageContent">{{ message.message }}</div>
+        </div>
+      </div>
+    </div>
+
+
+
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+
+    <div id="footer">
+      <div class="elem">
+        <ion-input type="text" [(ngModel)]="message"></ion-input>
+      </div>
+
+      <div class="elem">
+        <ion-button (click)="sendMessage()"><ion-icon name="arrow-back-outline"></ion-icon></ion-button>
+      </div>
+    </div>
+</ion-footer>
