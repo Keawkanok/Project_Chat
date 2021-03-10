@@ -1,6 +1,9 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>chat</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Chat Group</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -9,9 +12,11 @@
 
     <div id="chatMessage">
       <div *ngFor="let message of messages" [class]="message.specialMessage ? 'message special' : 'message'">
-        <div [class]="message.username != username ? 'innerMessage messageRight' : 'innerMessage messageLeft'">
+        <div [class]="message.username == username ? 'innerMessage messageRight' : 'innerMessage messageLeft'">
           <div class="username">{{ message.username }}</div>
-          <div class="messageContent">{{ message.message }}</div>
+          <div class="messageContent">{{ message.message }}
+            <div class="date">{{ message.date | date: 'hh:mm a' }}</div>
+          </div>
         </div>
       </div>
     </div>
@@ -31,5 +36,8 @@
       <div class="elem">
         <ion-button (click)="sendMessage()"><ion-icon name="arrow-back-outline"></ion-icon></ion-button>
       </div>
+      <!-- <div class="elem">
+        <ion-button (click)=" DeleteItem()">Del</ion-button>
+      </div> -->
     </div>
 </ion-footer>

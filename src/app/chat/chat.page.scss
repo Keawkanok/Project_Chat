@@ -1,86 +1,128 @@
 .innerMessage {
   display: inline-block;
   padding: 5px 10px;
-  // background: color($colors, 'primary');
-  background-color: blue;
+  background: #00bfff;
+  //   background: linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%);
+  //   background: linear-gradient(90deg, #00d2ff 0%, #3a47d5 100%);
   margin: 5px;
   color: white;
   border-radius: 3px;
 }
 .innerMessage.messageRight {
-    background-color: royalblue;
+  background-color: #1e90ff;
+  //   background: linear-gradient(90deg, #00c9ff 0%, #92fe9d 100%);
+  // background-image: linear-gradient(to right, #9D50BB 0%, #6E48AA  51%, #9D50BB  100%)
+  //   background: linear-gradient(90deg, #4b6cb7 0%, #182848 100%);
 }
+
 .username {
-    font-size: 80%;
-    font-weight: bold;
+  font-size: 80%;
+  font-weight: bold;
 }
 .message {
-    font-size: 120%;
+  font-size: 120%;
 }
 .elem button {
-    border-radius: 0;
-    margin: 0;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+  border-radius: 0;
+  margin: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 .elem {
-    position: relative;
-    min-width: 50px;
+  position: relative;
+  min-width: 50px;
 }
 
 div#footer div.elem:first-child {
-    flex-grow: 1;
+  flex-grow: 1;
 }
 div#footer {
-    display: flex;
-    flex-direction: row;
-    align-items: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
 }
 ion-toolbar {
-    margin: 0;
-    padding: 0!important;
+  margin: 0;
+  padding: 0 !important;
 }
 ion-input {
-    padding-left: 15px;
-    font-size: 125%;
+  padding-left: 15px;
+  font-size: 125%;
 }
+
 .message:after {
-    content: '';
-    display: block;
-    clear: both;
+  content: "";
+  display: block;
+  clear: both;
 }
 .messageLeft {
-    float: left;
+  float: left;
 }
 .messageRight {
-     float: right;
+  float: right;
 }
-.message.special .innerMessage .messageContent{
-    // background: white;
-    display: inline-block;
-    padding: 0 10px;
-}
-
-.message.special .innerMessage:before{
-    content: '';
-    height: 2px;
-    // background: #eee;
-    display: block;
-    top: 50%;
-    position: absolute;
-    left: 0;
-    width: 100%;
-    z-index: -1;
+.message.special .innerMessage .messageContent {
+  // background: white;
+  color: blueviolet;
+  display: inline-block;
+  padding: 0 10px;
 }
 
-.message.special .innerMessage{
-    background: transparent;
-    // color: black;
-    font-size: 80%;
-    width: 100%;
-    float: none;
-    text-align: center;
-    position: relative;
+.message.special .innerMessage:before {
+  content: "";
+  height: 2px;
+  // background: #eee;
+  display: block;
+  top: 50%;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  z-index: -1;
+}
+
+.message.special .innerMessage {
+  background: transparent;
+  // color: black;
+  // color: s;
+  font-size: 80%;
+  width: 100%;
+  float: none;
+  text-align: center;
+  position: relative;
+}
+.messageContent .date {
+  visibility: hidden;
+  width: 120px;
+  //   background-color: black;
+  background: linear-gradient(90deg, #fc466b 0%, #3f5efb 100%);
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+// .messageContent:hover .date {
+//   visibility: visible;
+// }
+.messageContent:hover .date {
+  // visibility: visible;
+  // float: right;
+  // position: absolute;
+  // left: 0;
+  // width: 100%;
+  // text-align: center;
+  // padding: 22px;
+  visibility: visible;
+  position: absolute;
+  left: 0px;
+  right: 0;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -33px;
 }

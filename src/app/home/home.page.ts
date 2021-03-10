@@ -15,27 +15,19 @@ export class HomePage {
     public alertController: AlertController,
     public router: Router,
     public db: AngularFireDatabase
-  ) 
-  {
-  console.log(this.username);
-
+  ) {
+    // console.log(this.username);
   }
 
   loginUser() {
-  console.log(this.username);
-
     if (/^[a-zA-Z0-9]+$/.test(this.username)) {
-      // all cool
-      // const params = {
-      //   username: this.username,
-      // };
-      this.navCtrl.navigateForward('/chat/'+ this.username);
-      console.log(this.username);
+      this.navCtrl.navigateForward('/chat/' + this.username);
+      // console.log(this.username);
+
       this.db.list('/chat').push({
         specialMessage: true,
-        message: `${this.username} has joined the room`
+        message: `${this.username} has joined the room`,
       });
-      // const test = this.router.navigate(['/chat', { state: params}]);
     } else {
       this.alert('Error', 'Invalid Username');
     }
@@ -51,10 +43,9 @@ export class HomePage {
     });
 
     await alertBox.present();
-  
   }
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ChatPage');
+  // ionViewDidLoad() {
+  //   console.log('ionViewDidLoad ChatPage');
 
-  }
+  // }
 }

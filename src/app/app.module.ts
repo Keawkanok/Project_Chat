@@ -11,12 +11,18 @@ import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { AngularFireModule } from '@angular/fire';
-// import { AngularFirestoreModule } from '@angular/fire/firestore';
-// import { AngularFireStorageModule } from '@angular/fire/storage';
-// import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from '../environments/environment';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+// import { AngularFireStorageModule } from '@angular/fire/storage';
+
+//NgModul
 import { FormsModule } from '@angular/forms';
+
+//Database
 import { AngularFireDatabaseModule } from '@angular/fire/database';
+
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent, ChatPage],
@@ -26,16 +32,18 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
     IonicModule.forRoot(),
     AppRoutingModule,
     FormsModule,
-    // AngularFirestoreModule,
-    // AngularFireAuthModule,
+    AngularFirestoreModule,
+    AngularFireAuthModule,
     // AngularFireStorageModule,
     AngularFireModule.initializeApp(environment.firebaseConfig), 
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    HttpClientModule
   ],
   providers: [
     ChatPage,
     StatusBar,
     SplashScreen,
+    AngularFirestoreModule,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
   ],
   bootstrap: [AppComponent],
