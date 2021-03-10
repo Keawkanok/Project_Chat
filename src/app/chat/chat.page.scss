@@ -82,6 +82,7 @@ ion-input {
   z-index: -1;
 }
 
+<<<<<<< HEAD
 .message.special .innerMessage {
   background: transparent;
   // color: black;
@@ -125,4 +126,15 @@ ion-input {
   margin-left: auto;
   margin-right: auto;
   margin-top: -33px;
+=======
+.message.special .innerMessage{
+    background: transparent;
+    color: cornflowerblue;
+    // color: black;
+    font-size: 80%;
+    width: 100%;
+    float: none;
+    text-align: center;
+    position: relative;
+>>>>>>> eb62844a6cccf3666e9c64b95e3aa2092efeaf7f
 }
