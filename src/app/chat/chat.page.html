@@ -12,17 +12,17 @@
 
     <div id="chatMessage">
       <div *ngFor="let message of messages" [class]="message.specialMessage ? 'message special' : 'message'">
-<<<<<<< HEAD
+
         <div [class]="message.username == username ? 'innerMessage messageRight' : 'innerMessage messageLeft'">
           <div class="username">{{ message.username }}</div>
           <div class="messageContent">{{ message.message }}
             <div class="date">{{ message.date | date: 'hh:mm a' }}</div>
           </div>
-=======
+
         <div [class]="message.username != username ? 'innerMessage messageRight' : 'innerMessage messageLeft'">
           <div class="username"> {{ message.username }} </div>
           <div class="messageContent"> {{ message.message }} </div>
->>>>>>> eb62844a6cccf3666e9c64b95e3aa2092efeaf7f
+
         </div>
       </div>
     </div>
